@@ -24,7 +24,7 @@
                     <p>@Html.DisplayFor(modelItem => item.address)</p>
                     <div>
                         <p>-@Html.DisplayFor(modelItem => item.reduction)%</p>
-                        <p>Average price $@Html.DisplayFor(modelItem => item.averagePrice)</p>
+                        <p style="font-size: 1.3rem;">Average price @item.getAveragePrice()€</p>
                     </div>
                     <button type="button" class="btn btn-info">
                         @Html.ActionLink("Show menu", "Dishes/" + @item.id, "Home", null, null)
