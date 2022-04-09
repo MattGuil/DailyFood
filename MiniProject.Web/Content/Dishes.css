@@ -55,7 +55,9 @@ strong {
     font-size: 2rem;
 }
 
-button {
+.btn-info {
+    text-decoration: none;
+    color: inherit;
     position: absolute;
     top: 0;
     right: 0;
@@ -63,14 +65,13 @@ button {
     height: 50px;
     margin-top: 10px;
     margin-right: 10px;
-    padding: 5px;
-}
-
-.btn-info a, .btn-info a:hover, .btn-info a:focus, .btn-info a:active {
     text-decoration: none;
-    color: inherit;
+    color: white;
     font-size: 2rem;
     font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

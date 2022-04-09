@@ -70,11 +70,16 @@ body {
     align-items: center;
 }
 
-.btn-dark a, .btn-dark a:hover, .btn-dark a:focus, .btn-dark a:active {
+.btn-default {
     text-decoration: none;
     color: inherit;
     font-size: 2rem;
     font-weight: 800;
+    width: 50%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #cart-price {

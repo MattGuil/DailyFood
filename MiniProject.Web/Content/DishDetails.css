@@ -48,13 +48,14 @@ h1 {
 }
 
 .btn-success {
+    text-decoration: none;
+    color: white;
     position: absolute;
     bottom: 0;
     right: 0;
     height: 50px;
-}
-
-.btn-success a, .btn-success a:hover, .btn-success a:focus, .btn-success a:active {
-    text-decoration: none;
-    color: inherit;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

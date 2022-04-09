@@ -30,9 +30,7 @@
                     <p><strong>@Html.DisplayFor(modelItem => item.Name)</strong></p>
                     <p>@Html.DisplayFor(modelItem => item.Price)€</p>
                 </div>
-                <button type="button" class="btn btn-info">
-                    @Html.ActionLink("+", "DishDetails", "Home", new { dishId = item.Id, addToCart = 0 }, null)
-                </button>
+                @Html.ActionLink("+", "DishDetails", "Home", new { dishId = item.Id, addToCart = 0 }, new { @type = "button", @class="btn btn-info" })
             </div>
         }
     </div>

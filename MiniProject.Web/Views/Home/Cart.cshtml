@@ -27,12 +27,8 @@
                 <p>Quantity: @item.Value.quantity</p>
                 <p>@item.Value.getPrice() €</p>
                 <div>
-                    <button type="button" class="btn btn-dark">
-                        @Html.ActionLink("+", "Cart", "Home", new { _itemKey = item.Key, _action = 1 }, null)
-                    </button>
-                    <button type="button" class="btn btn-dark">
-                        @Html.ActionLink("-", "Cart", "Home", new { _itemKey = item.Key, _action = -1 }, null)
-                    </button>
+                    @Html.ActionLink("+", "Cart", "Home", new { _itemKey = item.Key, _action = 1 }, new { @type = "button", @class = "btn btn-default" })
+                    @Html.ActionLink("-", "Cart", "Home", new { _itemKey = item.Key, _action = -1 }, new { @type = "button", @class = "btn btn-default" })
                 </div>
             </div>
         }

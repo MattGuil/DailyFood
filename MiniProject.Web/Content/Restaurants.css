@@ -51,14 +51,6 @@ body {
     text-align: center;
 }
 
-.restaurant-item button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
 .restaurant-item div div {
     display: flex;
     justify-content: space-around;
@@ -72,7 +64,17 @@ body {
     border-radius: 5px;
 }
 
-a, a:hover, a:focus, a:active {
+.btn-info {
     text-decoration: none;
-    color: inherit;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
