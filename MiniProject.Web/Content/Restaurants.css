@@ -1,0 +1,78 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #0093AB;
+    color: white;
+}
+
+#restaurant-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.restaurant-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    column-gap: 2rem;
+    height: 175px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.restaurant-item img {
+    transition: 300ms ease;
+}
+
+.restaurant-item:hover img {
+    transform: rotate(2deg);
+}
+
+.restaurant-item:not(:hover) img {
+    transform: rotate(-2deg);
+}
+
+.restaurant-item img {
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.restaurant-item p:last-child {
+    text-align: center;
+}
+
+.restaurant-item button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.restaurant-item div div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.restaurant-item div div p:first-child {
+    background-color: #EA5C2B;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}

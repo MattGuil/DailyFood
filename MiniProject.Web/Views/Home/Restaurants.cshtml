@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Restaurants";
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Restaurants.css" />
+</head>
+<body>
+    <h1>Top Rated Restaurant</h1>
+    <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+
+    <div id="restaurant-list">
+        @foreach (MiniProject.Data.Models.Restaurant item in Model)
+        {
+            <div id="" class="restaurant-item">
+                <img src="~/Content/Images/@item.image" />
+                <div>
+                    <p>@Html.DisplayFor(modelItem => item.typeOfFood)</p>
+                    <p><strong>@Html.DisplayFor(modelItem => item.name)</strong></p>
+                    <p>@Html.DisplayFor(modelItem => item.address)</p>
+                    <div>
+                        <p>-@Html.DisplayFor(modelItem => item.reduction)%</p>
+                        <p>Average price $@Html.DisplayFor(modelItem => item.averagePrice)</p>
+                    </div>
+                    <button type="button" class="btn btn-info">
+                        @Html.ActionLink("Show menu", "Dishes/" + @item.id, "Home", null, null)
+                    </button>
+                </div>
+                <p>@Html.DisplayFor(modelItem => item.stars)/10</p>
+            </div>
+        }
+    </div>
+</body>
+</html>

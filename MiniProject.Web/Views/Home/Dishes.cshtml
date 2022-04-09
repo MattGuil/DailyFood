@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Dishes";
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Dishes.css" />
+</head>
+<body>
+    @if (Model.id == 0)
+    {
+        <h1>All menus</h1>
+    }
+    else
+    {
+        <h1>@Model.name</h1>
+        <h2>Menu</h2>
+    }
+    <div id="menu-list">
+        @foreach (MiniProject.Data.Models.Dish item in Model.menu.getDishes())
+        {
+            <div class="menu-item">
+                <div>
+                    <img src="~/Content/Images/@item.Image" />
+                </div>
+                <div class="infos">
+                    <p><strong>@Html.DisplayFor(modelItem => item.Name)</strong></p>
+                    <p>@Html.DisplayFor(modelItem => item.Price)€</p>
+                </div>
+                <button type="button" class="btn btn-info">
+                    @Html.ActionLink("+", "DishDetails", "Home", new { dishId = item.Id, addToCart = 0 }, null)
+                </button>
+            </div>
+        }
+    </div>
+</body>
+</html>

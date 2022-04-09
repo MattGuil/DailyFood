@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "My Cart";
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Cart.css" />
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+
+    <div id="cart-list">
+        @foreach (KeyValuePair<int, MiniProject.Data.Models.Dish> item in Model.getItems())
+        {
+            <div class="cart-item">
+                <div>
+                    <img src="~/Content/Images/@item.Value.Image" />
+                </div>
+                <div>
+                    <p>@item.Value.restaurant</p>
+                    <p><strong>@item.Value.Name</strong></p>
+                    <p>@item.Value.Description</p>
+                </div>
+                <p>@item.Value.Price €</p>
+                <button type="button" class="btn btn-danger">
+                    @Html.ActionLink("x", "Cart", "Home", new { _itemKeyToRemove = item.Key }, null)
+                </button>
+            </div>
+        }
+    </div>
+    <div>
+        <p id="cart-price">Total Price: <strong>@Model.getPrice() €</strong></p>
+        <button type="button" class="btn btn-success">
+            <img src="~/Content/Images/shopping-cart.png"/> Order
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+C:\Users\mattg\Documents\Matt\INFO\m4105c5\MiniProject\MiniProjectSolution\MiniProject.Data\bin\Debug\MiniProject.Data.dll
+C:\Users\mattg\Documents\Matt\INFO\m4105c5\MiniProject\MiniProjectSolution\MiniProject.Data\bin\Debug\MiniProject.Data.pdb
+C:\Users\mattg\Documents\Matt\INFO\m4105c5\MiniProject\MiniProjectSolution\MiniProject.Data\obj\Debug\MiniProject.Data.csproj.AssemblyReference.cache
+C:\Users\mattg\Documents\Matt\INFO\m4105c5\MiniProject\MiniProjectSolution\MiniProject.Data\obj\Debug\MiniProject.Data.csproj.CoreCompileInputs.cache
+C:\Users\mattg\Documents\Matt\INFO\m4105c5\MiniProject\MiniProjectSolution\MiniProject.Data\obj\Debug\MiniProject.Data.dll
+C:\Users\mattg\Documents\Matt\INFO\m4105c5\MiniProject\MiniProjectSolution\MiniProject.Data\obj\Debug\MiniProject.Data.pdb
