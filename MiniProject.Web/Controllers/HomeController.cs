@@ -54,14 +54,30 @@ namespace MiniProject.Web.Controllers
             return View(model);
         }
 
-        public ActionResult Cart(int? _itemKeyToRemove)
+        public ActionResult Cart(int? _itemKey, int? _action)
         {
-            int itemKeyToRemove = _itemKeyToRemove ?? -1;
+            int itemKey = _itemKey ?? -1;
+            int action = _action ?? 0;
 
-            if (itemKeyToRemove != -1)
+            if (itemKey != -1)
             {
                 Cart cart = Session["cart"] as Cart;
-                cart.removeItemWithKey(itemKeyToRemove);
+                if(action != 0)
+                {
+                    if(action == 1)
+                    {
+                        cart.getItem(itemKey).incrQuantity();
+                    } else if(action == -1)
+                    {
+                        if(cart.getItem(itemKey).quantity > 1)
+                        {
+                            cart.getItem(itemKey).decrQuantity();
+                        } else
+                        {
+                            cart.removeItemWithKey(itemKey);
+                        }
+                    }
+                }
                 Session["cart"] = cart;
             }
 

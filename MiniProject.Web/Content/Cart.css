@@ -63,11 +63,14 @@ body {
     margin: auto;
 }
 
-.btn-danger {
-    margin: 20px;
+.cart-item div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.btn-danger a, .btn-danger a:hover, .btn-danger a:focus, .btn-danger a:active {
+.btn-dark a, .btn-dark a:hover, .btn-dark a:focus, .btn-dark a:active {
     text-decoration: none;
     color: inherit;
     font-size: 2rem;

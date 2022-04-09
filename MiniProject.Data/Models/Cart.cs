@@ -31,6 +31,11 @@ namespace MiniProject.Data.Models
             counter++;
         }
 
+        public CartItem getItem(int key)
+        {
+            return items[key];
+        }
+
         public void removeItemWithKey(int itemKey)
         {
             if(items[itemKey].quantity > 1)
