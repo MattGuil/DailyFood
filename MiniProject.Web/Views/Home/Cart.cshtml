@@ -13,18 +13,19 @@
     <h1>@ViewBag.Title</h1>
 
     <div id="cart-list">
-        @foreach (KeyValuePair<int, MiniProject.Data.Models.Dish> item in Model.getItems())
+        @foreach (KeyValuePair<int, MiniProject.Data.Models.CartItem> item in Model.getItems())
         {
             <div class="cart-item">
                 <div>
-                    <img src="~/Content/Images/@item.Value.Image" />
+                    <img src="~/Content/Images/@item.Value.dish.Image" />
                 </div>
                 <div>
-                    <p>@item.Value.restaurant</p>
-                    <p><strong>@item.Value.Name</strong></p>
-                    <p>@item.Value.Description</p>
+                    <p>@item.Value.dish.restaurant</p>
+                    <p><strong>@item.Value.dish.Name</strong></p>
+                    <p>@item.Value.dish.Description</p>
                 </div>
-                <p>@item.Value.Price €</p>
+                <p>Quantity: @item.Value.quantity</p>
+                <p>@item.Value.getPrice() €</p>
                 <button type="button" class="btn btn-danger">
                     @Html.ActionLink("x", "Cart", "Home", new { _itemKeyToRemove = item.Key }, null)
                 </button>

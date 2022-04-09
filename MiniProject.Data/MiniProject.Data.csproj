@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Dish.cs" />
     <Compile Include="Models\DishCategory.cs" />
     <Compile Include="Models\Menu.cs" />

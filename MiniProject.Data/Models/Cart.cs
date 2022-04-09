@@ -8,26 +8,41 @@ namespace MiniProject.Data.Models
 {
     public class Cart
     {
-        private Dictionary<int, Dish> items;
+        private Dictionary<int, CartItem> items;
         private int counter = 0;
         
         public Cart()
         {
-            items = new Dictionary<int, Dish>();
+            items = new Dictionary<int, CartItem>();
         }
 
         public void addItem(Dish dish)
         {
-            items.Add(counter, dish);
+            foreach(CartItem item in items.Values)
+            {
+                if(item.dish.Id == dish.Id)
+                {
+                    item.incrQuantity();
+                    return;
+                }
+            }
+
+            items.Add(counter, new CartItem(dish));
             counter++;
         }
 
         public void removeItemWithKey(int itemKey)
         {
-            items.Remove(itemKey);
+            if(items[itemKey].quantity > 1)
+            {
+                items[itemKey].decrQuantity();
+            } else
+            {
+                items.Remove(itemKey);
+            }
         }
 
-        public Dictionary<int, Dish> getItems()
+        public Dictionary<int, CartItem> getItems()
         {
             return items;
         }
@@ -35,9 +50,9 @@ namespace MiniProject.Data.Models
         public float getPrice()
         {
             float price = 0;
-            foreach (Dish dish in items.Values)
+            foreach (CartItem item in items.Values)
             {
-                price += dish.Price;
+                price += item.getPrice();
             }
             return price;
         }

@@ -10,19 +10,13 @@ namespace MiniProject.Data.Models
     {
         public int Id { get; set; }
         public string restaurant { get; set; }
-
         public string Name { get; set; }
-
         public string Image { get; set; }
-
         public DishCategory Category { get; set; }
-
         public string Description { get; set; }
-
         public float Price { get; set; }
-
         public bool isAddedToCart { get; set; }
-
+        
         public Dish(int Id, string restaurant, string Name, string Image, DishCategory Category, string Description, float Price)
         {
             this.Id = Id;
