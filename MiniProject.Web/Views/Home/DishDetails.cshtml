@@ -11,14 +11,14 @@
     <link rel="stylesheet" type="text/css" href="~/Content/DishDetails.css" />
 </head>
 <body>
+    @if (Model.isAddedToCart)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            New dish added to your cart!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+    }
     <div id="content">
-        @if(Model.isAddedToCart) {
-            <div class="alert alert-success alert-dismissible" role="alert">
-                New dish added to your cart!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-        }
-        
         <img src="~/Content/Images/@Model.Image" />
 
         <div id="infos">

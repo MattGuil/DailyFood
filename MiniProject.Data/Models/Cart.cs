@@ -11,9 +11,12 @@ namespace MiniProject.Data.Models
         private Dictionary<int, CartItem> items;
         private int counter = 0;
         
+        public bool isOrdered { get; set; }
+        
         public Cart()
         {
             items = new Dictionary<int, CartItem>();
+            isOrdered = false;
         }
 
         public void addItem(Dish dish)

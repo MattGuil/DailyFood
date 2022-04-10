@@ -10,8 +10,24 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Cart.css" />
 </head>
 <body>
+    @if (Model.isOrdered)
+    {
+        if (Model.getItems().Count == 0)
+        {
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                Your cart is empty.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                Cart ordered!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        }
+    }
     <h1>@ViewBag.Title</h1>
-
     <div id="cart-list">
         @foreach (KeyValuePair<int, MiniProject.Data.Models.CartItem> item in Model.getItems())
         {
@@ -35,9 +51,7 @@
     </div>
     <div>
         <p id="cart-price">Total Price: <strong>@Model.getPrice() €</strong></p>
-        <button type="button" class="btn btn-success">
-            <img src="~/Content/Images/shopping-cart.png"/> Order
-        </button>
+        @Html.ActionLink("Order", "Cart", "Home", new { _itemKey = 0, _action = 2 }, new { @type = "button", @class = "btn btn-success" })
     </div>
 </body>
 </html>

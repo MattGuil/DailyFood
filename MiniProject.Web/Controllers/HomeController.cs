@@ -59,9 +59,16 @@ namespace MiniProject.Web.Controllers
             int itemKey = _itemKey ?? -1;
             int action = _action ?? 0;
 
+            Cart cart = Session["cart"] as Cart;
+
+            cart.isOrdered = false;
+            if (action == 2)
+            {
+                cart.isOrdered = true;
+            }
+
             if (itemKey != -1)
             {
-                Cart cart = Session["cart"] as Cart;
                 if(action != 0)
                 {
                     if(action == 1)
@@ -76,7 +83,7 @@ namespace MiniProject.Web.Controllers
                         {
                             cart.removeItemWithKey(itemKey);
                         }
-                    }
+                    } 
                 }
                 Session["cart"] = cart;
             }
